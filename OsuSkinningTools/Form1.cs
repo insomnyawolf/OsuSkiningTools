@@ -25,30 +25,31 @@ namespace OsuSkinningTools
             var configPath = Path.Combine(Directory.GetCurrentDirectory(), "settings.json");
             ConfigHelper = new ConfigurationHelper<Configuration>(configPath);
 
-            SetWorkingDirectory(Config.WorkingDirectory);
+            SetWorkingDirectory(Config.WorkingDirectory, false);
         }
 
-        private void btn_SelectWorkingDir_Click(object sender, EventArgs e)
+        private void Btn_SelectWorkingDir_Click(object sender, EventArgs e)
         {
-            using (var fbd = new FolderBrowserDialog())
-            {
-                DialogResult result = fbd.ShowDialog();
+            using var fbd = new FolderBrowserDialog();
+            DialogResult result = fbd.ShowDialog();
 
-                if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
-                {
-                    SetWorkingDirectory(fbd.SelectedPath);
-                }
+            if (result == DialogResult.OK && !string.IsNullOrWhiteSpace(fbd.SelectedPath))
+            {
+                SetWorkingDirectory(fbd.SelectedPath);
             }
         }
 
-        private void SetWorkingDirectory(string path)
+        private void SetWorkingDirectory(string path, bool showMessage = true)
         {
             if (string.IsNullOrEmpty(path)
                 || !Directory.Exists(path)
                 || !Directory.GetFiles(path).Any(file => file.Contains("skin.ini")))
             {
                 SkinFiles = null;
-                MessageBox.Show("Please select a valid skin folder.");
+                if (showMessage)
+                {
+                    MessageBox.Show("Please select a valid skin folder.");
+                }
                 return;
             }
 
@@ -58,7 +59,7 @@ namespace OsuSkinningTools
             ConfigHelper.Save();
         }
 
-        private void btn_CleanLowResAssets_Click(object sender, EventArgs e)
+        private void Btn_CleanLowResAssets_Click(object sender, EventArgs e)
         {
             if (!IsValidWorkingDirectory())
             {
@@ -97,7 +98,7 @@ namespace OsuSkinningTools
             return true;
         }
 
-        private void btn_HDtoSD_Click(object sender, EventArgs e)
+        private void Btn_HDtoSD_Click(object sender, EventArgs e)
         {
             progressBar.Maximum = SkinFiles.HdImages.Count - 1;
             progressBar.Value = 0;

@@ -27,19 +27,18 @@ namespace ConfigHelper
         private void FileWatch()
         {
             // Create a new FileSystemWatcher and set its properties.
-            watcher = new FileSystemWatcher();
-            watcher.Path = ConfigDirectory;
-
-            // Watch for changes in LastAccess and LastWrite times, and
-            // the renaming of files or directories.
-            watcher.NotifyFilter = NotifyFilters.LastWrite;
-
-            // Only watch text files.
-            watcher.Filter = "*" + Path.GetFileName(ConfigPath);
+            watcher = new FileSystemWatcher()
+            {
+                // Set the watch to look in that folder
+                Path = ConfigDirectory,
+                // Watch for changes (LastWrite)
+                NotifyFilter = NotifyFilters.LastWrite,
+                // Only watch config file.
+                Filter = "*" + Path.GetFileName(ConfigPath),
+            };
 
             // Add event handlers.
             watcher.Changed += Load;
-
             // Begin watching.
             watcher.EnableRaisingEvents = true;
         }

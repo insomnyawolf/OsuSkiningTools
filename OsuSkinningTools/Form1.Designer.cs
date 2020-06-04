@@ -69,7 +69,7 @@
             this.btn_SelectWorkingDir.TabIndex = 1;
             this.btn_SelectWorkingDir.Text = "Select";
             this.btn_SelectWorkingDir.UseVisualStyleBackColor = true;
-            this.btn_SelectWorkingDir.Click += new System.EventHandler(this.btn_SelectWorkingDir_Click);
+            this.btn_SelectWorkingDir.Click += new System.EventHandler(this.Btn_SelectWorkingDir_Click);
             // 
             // lbl_WorkingDirectory
             // 
@@ -112,7 +112,7 @@
             this.btn_CleanLowResAssets.TabIndex = 1;
             this.btn_CleanLowResAssets.Text = "Clean It";
             this.btn_CleanLowResAssets.UseVisualStyleBackColor = true;
-            this.btn_CleanLowResAssets.Click += new System.EventHandler(this.btn_CleanLowResAssets_Click);
+            this.btn_CleanLowResAssets.Click += new System.EventHandler(this.Btn_CleanLowResAssets_Click);
             // 
             // lbl_CleanLowResAssets
             // 
@@ -187,7 +187,7 @@
             this.btn_HDtoSD.TabIndex = 1;
             this.btn_HDtoSD.Text = "Create It";
             this.btn_HDtoSD.UseVisualStyleBackColor = true;
-            this.btn_HDtoSD.Click += new System.EventHandler(this.btn_HDtoSD_Click);
+            this.btn_HDtoSD.Click += new System.EventHandler(this.Btn_HDtoSD_Click);
             // 
             // Form1
             // 
