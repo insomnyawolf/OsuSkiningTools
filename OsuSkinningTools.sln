@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30105.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OsuSkinningTools", "OsuSkinningTools\OsuSkinningTools.csproj", "{452C6E94-4D75-496F-8F4D-1547FE8F71BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigHelper", "ConfigHelper\ConfigHelper.csproj", "{AB5D0C3A-A8A4-42A2-B900-6CD61221D52D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{452C6E94-4D75-496F-8F4D-1547FE8F71BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452C6E94-4D75-496F-8F4D-1547FE8F71BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452C6E94-4D75-496F-8F4D-1547FE8F71BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452C6E94-4D75-496F-8F4D-1547FE8F71BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB5D0C3A-A8A4-42A2-B900-6CD61221D52D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB5D0C3A-A8A4-42A2-B900-6CD61221D52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB5D0C3A-A8A4-42A2-B900-6CD61221D52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB5D0C3A-A8A4-42A2-B900-6CD61221D52D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {07F4E9BD-F419-480F-AF87-EB7C53D4B7AC}
+	EndGlobalSection
+EndGlobal
