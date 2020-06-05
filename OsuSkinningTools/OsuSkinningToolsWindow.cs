@@ -1,4 +1,6 @@
 ﻿using ConfigHelper;
+using MaterialSkin;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,7 +50,9 @@ namespace OsuSkinningTools
                 SkinFiles = null;
                 if (showMessage)
                 {
-                    MessageBox.Show("Please select a valid skin folder.");
+                    var error = "Please select a valid skin folder.";
+                    MessageBox.Show(error);
+                    lbl_WorkingDirectory.Text = error;
                 }
                 return;
             }
@@ -100,6 +104,11 @@ namespace OsuSkinningTools
 
         private void Btn_HDtoSD_Click(object sender, EventArgs e)
         {
+            if (!IsValidWorkingDirectory())
+            {
+                return;
+            }
+
             progressBar.Maximum = SkinFiles.HdImages.Count - 1;
             progressBar.Value = 0;
             //Resizes the images
@@ -112,6 +121,7 @@ namespace OsuSkinningTools
             }
 
             MessageBox.Show("Done");
+
         }
     }
 }

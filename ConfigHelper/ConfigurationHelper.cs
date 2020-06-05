@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 namespace ConfigHelper
 {
@@ -9,6 +10,12 @@ namespace ConfigHelper
         private readonly string ConfigPath;
         private readonly string ConfigDirectory;
         private FileSystemWatcher watcher;
+
+        // Semafore
+        // Prevents reloading the file if it's modifyed by the program itself
+        // Prevents Loading the file twice when externally modified since FileSystemWatcher calls twice
+        private bool skip;
+
         public T Config { get; private set; }
 
         public ConfigurationHelper(string ConfigPath)
@@ -22,6 +29,7 @@ namespace ConfigHelper
 
             Load();
             FileWatch();
+            skip = true;
         }
 
         private void FileWatch()
@@ -43,13 +51,27 @@ namespace ConfigHelper
             watcher.EnableRaisingEvents = true;
         }
 
-        private void Load(object source, FileSystemEventArgs e) => Load();
+        private void Load(object source, FileSystemEventArgs e) 
+        {
+            if (skip)
+            {
+                skip = false;
+                return;
+            }
+            skip = true;
+            Load();
+        }
+
         public void Load()
         {
             if (!File.Exists(ConfigPath))
             {
                 Save();
             }
+
+            //using var fileStream = File.Open(ConfigPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            //using var fileReader = new StreamReader(fileStream);
+            //var data = fileReader.ReadToEnd();
             Config = JsonSerializer.Deserialize<T>(File.ReadAllText(ConfigPath));
         }
 
@@ -64,6 +86,8 @@ namespace ConfigHelper
             {
                 Directory.CreateDirectory(ConfigDirectory);
             }
+
+            skip = true;
 
             File.WriteAllText(ConfigPath, JsonSerializer.Serialize(Config));
         }
