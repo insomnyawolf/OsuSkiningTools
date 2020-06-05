@@ -12,13 +12,13 @@ using System.Windows.Forms;
 
 namespace OsuSkinningTools
 {
-    public partial class Form1 : Form
+    public partial class OsuSkinningToolsWindow : Form
     {
         private ConfigurationHelper<Configuration> ConfigHelper { get; }
         private Configuration Config => ConfigHelper.Config;
 
         private SkinFiles SkinFiles { get; set; }
-        public Form1()
+        public OsuSkinningToolsWindow()
         {
             InitializeComponent();
 

@@ -18,7 +18,14 @@ namespace OsuSkinningTools
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+                Application.Run(new OsuSkinningToolsWindow());
+            }
+            catch (Exception e)
+            {
+                Application.Run(new CrashHandler(e));
+            }
         }
     }
 }

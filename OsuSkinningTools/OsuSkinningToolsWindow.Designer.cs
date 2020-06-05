@@ -1,6 +1,6 @@
 ﻿namespace OsuSkinningTools
 {
-    partial class Form1
+    partial class OsuSkinningToolsWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -32,20 +32,20 @@
             this.btn_SelectWorkingDir = new System.Windows.Forms.Button();
             this.lbl_WorkingDirectory = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_HDtoSD = new System.Windows.Forms.Button();
+            this.lbl_HDtoSD = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btn_CleanLowResAssets = new System.Windows.Forms.Button();
             this.lbl_CleanLowResAssets = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox_progressBar = new System.Windows.Forms.GroupBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.lbl_HDtoSD = new System.Windows.Forms.Label();
-            this.btn_HDtoSD = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.groupBox_progressBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,16 +82,46 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 56);
             this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 1;
+            this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(412, 259);
             this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.btn_HDtoSD);
+            this.tabPage2.Controls.Add(this.lbl_HDtoSD);
+            this.tabPage2.Location = new System.Drawing.Point(4, 24);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(404, 231);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Hd to Sd";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btn_HDtoSD
+            // 
+            this.btn_HDtoSD.Location = new System.Drawing.Point(9, 23);
+            this.btn_HDtoSD.Name = "btn_HDtoSD";
+            this.btn_HDtoSD.Size = new System.Drawing.Size(75, 23);
+            this.btn_HDtoSD.TabIndex = 1;
+            this.btn_HDtoSD.Text = "Create It";
+            this.btn_HDtoSD.UseVisualStyleBackColor = true;
+            this.btn_HDtoSD.Click += new System.EventHandler(this.Btn_HDtoSD_Click);
+            // 
+            // lbl_HDtoSD
+            // 
+            this.lbl_HDtoSD.AutoSize = true;
+            this.lbl_HDtoSD.Location = new System.Drawing.Point(9, 4);
+            this.lbl_HDtoSD.Name = "lbl_HDtoSD";
+            this.lbl_HDtoSD.Size = new System.Drawing.Size(309, 15);
+            this.lbl_HDtoSD.TabIndex = 0;
+            this.lbl_HDtoSD.Text = "This will creaty a copy of every @2x file with sd resolution";
             // 
             // tabPage1
             // 
@@ -123,22 +153,11 @@
             this.lbl_CleanLowResAssets.TabIndex = 0;
             this.lbl_CleanLowResAssets.Text = "This will delete every low resolution asset that have an hd equivalent";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.btn_HDtoSD);
-            this.tabPage2.Controls.Add(this.lbl_HDtoSD);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(404, 231);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Hd to Sd";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 24);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(635, 366);
+            this.tabPage3.Size = new System.Drawing.Size(404, 231);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Compile";
             // 
@@ -146,7 +165,7 @@
             // 
             this.tabPage4.Location = new System.Drawing.Point(4, 24);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(635, 366);
+            this.tabPage4.Size = new System.Drawing.Size(404, 231);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "About";
             // 
@@ -170,26 +189,7 @@
             this.progressBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar.TabIndex = 0;
             // 
-            // lbl_HDtoSD
-            // 
-            this.lbl_HDtoSD.AutoSize = true;
-            this.lbl_HDtoSD.Location = new System.Drawing.Point(9, 4);
-            this.lbl_HDtoSD.Name = "lbl_HDtoSD";
-            this.lbl_HDtoSD.Size = new System.Drawing.Size(309, 15);
-            this.lbl_HDtoSD.TabIndex = 0;
-            this.lbl_HDtoSD.Text = "This will creaty a copy of every @2x file with sd resolution";
-            // 
-            // btn_HDtoSD
-            // 
-            this.btn_HDtoSD.Location = new System.Drawing.Point(9, 23);
-            this.btn_HDtoSD.Name = "btn_HDtoSD";
-            this.btn_HDtoSD.Size = new System.Drawing.Size(75, 23);
-            this.btn_HDtoSD.TabIndex = 1;
-            this.btn_HDtoSD.Text = "Create It";
-            this.btn_HDtoSD.UseVisualStyleBackColor = true;
-            this.btn_HDtoSD.Click += new System.EventHandler(this.Btn_HDtoSD_Click);
-            // 
-            // Form1
+            // OsuSkinningToolsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,15 +198,15 @@
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
+            this.Name = "OsuSkinningToolsWindow";
             this.Text = "OsuSkinningTools";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox_progressBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
