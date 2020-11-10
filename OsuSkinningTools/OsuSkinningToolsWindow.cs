@@ -20,6 +20,7 @@ namespace OsuSkinningTools
         private SkinFiles SkinFiles { get; set; }
         public OsuSkinningToolsWindow()
         {
+            throw new Exception();
             InitializeComponent();
 
             var configPath = Path.Combine(Directory.GetCurrentDirectory(), "settings.json");
